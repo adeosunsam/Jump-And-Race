@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf28d6a7dae6d7748be04295a763a5e5
+timeCreated: 1543955922
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134237
+  packageName: Low poly 3D game character 1
+  packageVersion: 1.0
+  assetPath: Assets/Low poly 3D game character_1/Prefabs/Character_1@Running Crawl.prefab
+  uploadId: 281799

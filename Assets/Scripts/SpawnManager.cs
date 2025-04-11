@@ -5,16 +5,16 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject spawnPrefab;
+    private GameObject[] spawnPrefabs;
     
     private Vector3 spawnPosition;
 
-    private float spawnTimer = 2f;
-    private float spawnTimerMax = 2f;
+    private float spawnTimer;
+    private readonly float spawnTimerMax = 2f;
 
     void Start()
     {
-        spawnPosition = new Vector3(25f, 0, 0);
+        //spawnPosition = new Vector3(25f, 0, 0);
     }
 
     // Update is called once per frame
@@ -23,7 +23,10 @@ public class SpawnManager : MonoBehaviour
         spawnTimer += Time.deltaTime;
         if(!Player.gameOver && spawnTimer >= spawnTimerMax)
         {
-            Instantiate(spawnPrefab, spawnPosition, spawnPrefab.transform.rotation);
+            int random = Random.Range(0, spawnPrefabs.Length);
+            GameObject spawnPrefab = spawnPrefabs[random];
+			spawnPosition = new Vector3(25f, 0, spawnPrefab.transform.position.z);
+			Instantiate(spawnPrefab, spawnPosition, spawnPrefab.transform.rotation);
             spawnTimer = 0;
         }
     }

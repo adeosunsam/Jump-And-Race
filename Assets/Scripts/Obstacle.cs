@@ -14,7 +14,7 @@ public class Obstacle : MonoBehaviour, ICollider
     void Update()
     {
         if(!Player.gameOver)
-            transform.Translate(Vector3.left * Time.deltaTime * 25f);
+            transform.Translate(25f * Time.deltaTime * Vector3.left);
 
         if(transform.position.x < -15)
         {
